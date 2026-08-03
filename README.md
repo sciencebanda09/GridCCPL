@@ -1,6 +1,6 @@
-# GridACPL — Energy Grid Load Balancing Benchmark 
+# GridCCPL — Energy Grid Load Balancing Benchmark 
 
-GridACPL is an energy grid benchmark built on Adaptive Consequence-Penalized Learning applied to power grid management. 
+GridCCPL is an energy grid benchmark built on Adaptive Consequence-Penalized Learning applied to power grid management. 
 Designed to study consequence-aware reinforcement learning under delayed system stress, fluctuating demand, and operational constraints.
 
 ## Quick Start
@@ -20,7 +20,7 @@ energy_grid/
 ├── environments/
 │   └── grid_env.py                ← Grid simulation (18-state, 5-action)
 ├── agents/
-│   ├── grid_acpl_agent.py         ← GridACPL continuous agent
+│   ├── grid_CCPL_agent.py         ← GridCCPL continuous agent
 │   └── baselines.py               ← RuleBase, RandomAgent
 ├── networks/
 │   └── grid_networks.py           ← GRU, Actor, Critic, Lambda, Delay nets
@@ -35,7 +35,7 @@ energy_grid/
 └── results/                       ← Plots (auto-created)
 ```
 
-## What ACPL Does Here
+## What CCPL Does Here
 
 | Component        | Grid Role                                              |
 |------------------|--------------------------------------------------------|
