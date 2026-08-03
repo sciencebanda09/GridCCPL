@@ -1,6 +1,6 @@
 # GridCCPL — Energy Grid Load Balancing Benchmark 
 
-GridCCPL is an energy grid benchmark built on Adaptive Consequence-Penalized Learning applied to power grid management. 
+GridCCPL is an energy grid benchmark built on Causal Consequence-Penalized Learning applied to power grid management. 
 Designed to study consequence-aware reinforcement learning under delayed system stress, fluctuating demand, and operational constraints.
 
 ## Quick Start
