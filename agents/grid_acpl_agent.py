@@ -56,21 +56,30 @@ class GridACPLAgent:
         gae_lambda           = 0.97,
         tau_soft             = 0.005,
         lr_actor             = 8e-4,
-        lr_critic            = 1e-3,
-        lr_consequence       = 5e-4,
-        lr_lambda            = 2e-4,
-        lr_delay             = 2e-4,
+        lr_critic            = 3e-3,
+        lr_consequence       = 1e-3,
+        lr_lambda            = 5e-4,
+        lr_delay             = 1e-3,
         sigma_weight         = 0.3,
-        lambda_max           = 4.0,    # higher than default — grid safety critical
-        lambda_warmup        = 400,
+        lambda_max           = 2.5,
+        lambda_warmup        = 60,
         lambda_weight_decay  = 5e-5,
         hit_freq_weight      = 0.10,
+        clip_eps             = 0.2,
+        ent_coef             = 0.005,
+        gov_coef             = 0.03,
+        use_consequence      = True,
+        use_causal_attr      = True,
+        fixed_lambda         = None,
+        name                 = None,
         batch_size           = 128,
         buffer_capacity      = 100_000,
         n_steps              = 96,     # 1 day rollout
         n_epochs             = 4,
         seed                 = 42,
     ):
+        if name is not None:
+            self.name = name
         self.state_dim     = state_dim
         self.action_dim    = action_dim
         self.gamma         = gamma
@@ -83,6 +92,12 @@ class GridACPLAgent:
         self.lambda_warmup = lambda_warmup
         self.lambda_wd     = lambda_weight_decay
         self.hit_freq_weight = hit_freq_weight
+        self.clip_eps      = clip_eps
+        self.ent_coef      = ent_coef
+        self.gov_coef      = gov_coef
+        self.use_consequence = use_consequence
+        self.use_causal_attr = use_causal_attr
+        self.fixed_lambda  = fixed_lambda
         self.steps_done    = 0
         self.episodes_done = 0
         self.update_count  = 0
@@ -117,6 +132,8 @@ class GridACPLAgent:
 
         # On-policy rollout
         self._rollout: list = []
+        self._last_raw_action = np.zeros(action_dim, np.float32)
+        self._last_log_prob   = 0.0
 
         # Hit frequency EMA (grid runs slowly — use alpha=0.03)
         self._hit_freq_ema   = 0.3
@@ -160,9 +177,11 @@ class GridACPLAgent:
         s_norm = self.normalizer.normalize(state)[None]
 
         h_before = self._h_actor.copy()
-        action, log_prob, h_new, eps = self.actor.sample(
+        action, log_prob, h_new, raw = self.actor.sample(
             s_norm, self._h_actor, eval_mode=eval_mode)
         self._h_actor = h_new
+        self._last_raw_action = raw
+        self._last_log_prob   = log_prob
 
         # Log delay estimate
         exp_d = float(self.delay_net.expected_delay(h_before.squeeze()))
@@ -171,8 +190,13 @@ class GridACPLAgent:
         if len(self._delay_log) > 5000: self._delay_log.pop(0)
 
         # Log lambda (use raw value for logging, scale applied in Q computation)
-        lam_raw = float(self.lambda_net.forward(s_norm.squeeze()))
-        lam = lam_raw * self.lambda_scale
+        if not self.use_consequence:
+            lam = 0.0
+        elif self.fixed_lambda is not None:
+            lam = float(self.fixed_lambda) * self.lambda_scale
+        else:
+            lam_raw = float(self.lambda_net.forward(s_norm.squeeze()))
+            lam = lam_raw * self.lambda_scale
         self.last_mean_lambda = lam
         self._lambda_log.append(lam)
         if len(self._lambda_log) > 5000: self._lambda_log.pop(0)
@@ -182,7 +206,7 @@ class GridACPLAgent:
     # ── Store ─────────────────────────────────────────────────────────────────
 
     def store(self, state, action, reward, next_state, consequence, done,
-              hidden=None, next_hidden=None):
+              hidden=None, next_hidden=None, obs_delay=-1):
         self.normalizer.update(state)
         s_norm  = self.normalizer.normalize(state)
         ns_norm = self.normalizer.normalize(next_state)
@@ -191,12 +215,15 @@ class GridACPLAgent:
         nh = (next_hidden  if next_hidden  is not None else self._h_actor).flatten()
 
         # Off-policy buffer
-        self.buffer.push(s_norm, action, reward, ns_norm, consequence, done, h, nh)
+        self.buffer.push(s_norm, action, reward, ns_norm, consequence, done, h, nh,
+                         obs_delay=obs_delay)
 
         # On-policy rollout
         v = self.critic.forward(s_norm[None], h[None]).item()
         self._rollout.append({
-            "s": s_norm, "a": action, "r": float(reward),
+            "s": s_norm, "a": np.asarray(action, np.float32),
+            "raw": self._last_raw_action.copy(), "lp": float(self._last_log_prob),
+            "r": float(reward),
             "ns": ns_norm, "c": float(consequence), "d": float(done),
             "h": h, "nh": nh, "v": float(v),
         })
@@ -210,34 +237,77 @@ class GridACPLAgent:
         if len(self._rollout) < self.n_steps:
             return False
 
-        traj = self._rollout[-self.n_steps:]
-        S    = np.stack([t["s"]   for t in traj])
-        NS   = np.stack([t["ns"]  for t in traj])
-        A    = np.stack([t["a"]   for t in traj])
-        R    = np.array([t["r"]   for t in traj], np.float32)
-        C    = np.array([t["c"]   for t in traj], np.float32)
-        D    = np.array([t["d"]   for t in traj], np.float32)
-        H    = np.stack([t["h"]   for t in traj])
-        NH   = np.stack([t["nh"]  for t in traj])
-        V    = np.array([t["v"]   for t in traj], np.float32)
-        B    = self.n_steps
+        traj   = self._rollout[-self.n_steps:]
+        self._rollout.clear()
+        S      = np.stack([t["s"]   for t in traj])
+        NS     = np.stack([t["ns"]  for t in traj])
+        A      = np.stack([t["a"]   for t in traj])
+        RAW    = np.stack([t["raw"] for t in traj])
+        OLD_LP = np.array([t["lp"]  for t in traj], np.float32)
+        R      = np.array([t["r"]   for t in traj], np.float32)
+        C      = np.array([t["c"]   for t in traj], np.float32)
+        D      = np.array([t["d"]   for t in traj], np.float32)
+        H      = np.stack([t["h"]   for t in traj])
+        NH     = np.stack([t["nh"]  for t in traj])
+        V      = np.array([t["v"]   for t in traj], np.float32)
+        B      = len(traj)
 
-        # 1. Consequence net update
-        dummy_acts  = np.zeros(B, np.int32)
-        c_loss      = self.consequence_net.update_step(S, dummy_acts, C,
-                                                        np.ones(B, np.float32))
-        C_pred, sigma_pred = self.consequence_net.predict(S, dummy_acts)
-        self.last_consequence_loss = c_loss
+        if self.use_consequence:
+            # 0. Update delay net first so P(tau|h) reflects latest observed delays
+            batch = self.buffer.sample(min(64, len(self.buffer)))
+            if batch is not None:
+                obs_tau = batch["obs_delays"]
+                if np.any(obs_tau >= 0):
+                    self.last_delay_loss = self.delay_net.update(
+                        batch["hiddens"], obs_tau,
+                        weights=np.ones(len(obs_tau), np.float32))
 
-        # 2. Lambda
-        lam_batch = self.lambda_net.forward(S) * self.lambda_scale
+            # 1. Causal consequence back-attribution using P(tau|h)
+            if self.use_causal_attr:
+                P_tau = self.delay_net.forward(H)  # (B, tau_max+1)
+                C_target = np.zeros(B, np.float32)
+                tau_max = P_tau.shape[1] - 1
+                for t in range(B):
+                    max_k = min(tau_max, B - 1 - t)
+                    w_t = P_tau[t, :max_k + 1]
+                    mass = float(w_t.sum())
+                    if mass > 1e-4:
+                        C_target[t] = float(np.dot(w_t, C[t:t + max_k + 1]) / mass)
+                    else:
+                        C_target[t] = C[t]
+            else:
+                C_target = C
 
-        # 3. Consequence-corrected rewards
-        pen     = np.clip(lam_batch * (C_pred + self.sigma_weight * sigma_pred),
-                          0.0, np.abs(R) * 0.1 + 0.1)
-        R_corr  = R - pen
+            # 2. Train multi-horizon consequence net on continuous actions (S, A) -> C_target
+            c_losses = []
+            for _ in range(self.n_epochs):
+                perm_c = self.rng.permutation(B)
+                for start in range(0, B, 32):
+                    mb = perm_c[start:start+32]
+                    c_losses.append(self.consequence_net.update_step(
+                        S[mb], A[mb], C_target[mb], np.ones(len(mb), np.float32)))
+            self.last_consequence_loss = float(np.mean(c_losses)) if c_losses else 0.0
+            C_pred, sigma_pred = self.consequence_net.predict(S, A)
 
-        # 4. GAE advantages
+            # 3. State-conditioned Lambda
+            if self.fixed_lambda is not None:
+                lam_raw = np.full(B, float(self.fixed_lambda), np.float32)
+            else:
+                lam_raw = self.lambda_net.forward(S)
+            lam_batch = lam_raw * self.lambda_scale
+
+            # 4. Consequence-corrected rewards
+            C_eff  = 0.5 * C_target + 0.5 * C_pred if self.use_causal_attr else C_pred
+            pen    = np.clip(lam_batch * (C_eff + self.sigma_weight * sigma_pred),
+                             0.0, 4.0)
+            R_corr = R - pen
+        else:
+            C_target = C
+            C_pred = np.zeros(B, np.float32)
+            self.last_consequence_loss = 0.0
+            R_corr = R
+
+        # 5. GAE advantages
         NV      = self.critic.forward(NS, NH)
         deltas  = R_corr + self.gamma * NV * (1 - D) - V
         adv     = np.zeros(B, np.float32)
@@ -248,47 +318,52 @@ class GridACPLAgent:
         returns  = adv + V
         adv_norm = (adv - adv.mean()) / (adv.std() + 1e-8)
 
-        # 5. Critic update
-        v_loss = self.critic.backward_update(S, H, returns, np.ones(B, np.float32))
-        self.last_value_loss = v_loss
+        # 6. Critic update (minibatch epochs for accurate value baseline)
+        v_losses = []
+        for _ in range(self.n_epochs):
+            perm_v = self.rng.permutation(B)
+            for start in range(0, B, 32):
+                mb = perm_v[start:start+32]
+                v_losses.append(self.critic.backward_update(
+                    S[mb], H[mb], returns[mb], np.ones(len(mb), np.float32)))
+        self.last_value_loss = float(np.mean(v_losses)) if v_losses else 0.0
 
-        # 6. Policy update (PPO-style clipped)
+        # 7. Policy update (PPO-clipped + differentiable consequence-action governance)
         p_losses = []
         for _ in range(self.n_epochs):
             perm = self.rng.permutation(B)
             for start in range(0, B, 32):
-                mb      = perm[start:start+32]
-                s_mb    = S[mb]; h_mb = H[mb]; adv_mb = adv_norm[mb]
-                C_mb, sig_mb = self.consequence_net.predict(s_mb, dummy_acts[mb])
-                lam_mb  = self.lambda_net.forward(s_mb) * self.lambda_scale
-                c_pen   = lam_mb * (C_mb + self.sigma_weight * sig_mb)
-                p_loss  = float(np.mean(-adv_mb + c_pen))
+                mb     = perm[start:start+32]
+                gov_grad = None
+                if self.use_consequence and self.gov_coef > 0 and self.lambda_scale > 0:
+                    mean_mb, _, _, _ = self.actor.forward_batch(S[mb], H[mb])
+                    a_det = np.tanh(np.clip(mean_mb, -20.0, 20.0))
+                    dC_da = self.consequence_net.action_gradient(S[mb], a_det)
+                    if self.fixed_lambda is not None:
+                        lam_mb = np.full(len(mb), float(self.fixed_lambda), np.float32)
+                    else:
+                        lam_mb = self.lambda_net.forward(S[mb])
+                    lam_mb = lam_mb * self.lambda_scale
+                    gov_grad = (self.gov_coef * lam_mb[:, None]
+                                * dC_da * (1.0 - a_det**2))
+                    gov_grad = np.clip(gov_grad, -1.0, 1.0)
+                p_loss = self.actor.backward_update(
+                    S[mb], H[mb], RAW[mb], OLD_LP[mb], adv_norm[mb],
+                    clip_eps=self.clip_eps, ent_coef=self.ent_coef,
+                    gov_grad_mean=gov_grad)
                 p_losses.append(p_loss)
         self.last_policy_loss = float(np.mean(p_losses)) if p_losses else 0.0
 
-        # 7. Lambda update (magnitude + frequency blend)
-        c_norm     = C / (np.abs(C).mean() + 1e-6)
-        mag_target = sigmoid(c_norm - 1.0)
-        freq_target = np.full(B, self._hit_freq_ema, np.float32)
-        w           = self.hit_freq_weight
-        lam_target  = (1 - w) * mag_target + w * freq_target
-        lam_norm    = lam_batch / self.lambda_max
-        lam_errors  = lam_norm - lam_target
-        self.lambda_net.backward_update(S, lam_errors, weight_decay=self.lambda_wd)
-
-        # 8. Delay net update (use buffer hidden states)
-        batch = self.buffer.sample(min(64, len(self.buffer)))
-        if batch is not None:
-            # Approximate: observed consequence arrival = consequence_delay steps
-            # Real systems would use actual timestamps; here use heuristic
-            obs_tau = np.full(len(batch["actions"]), 16, np.int32)  # 4h default
-            # High-stress episodes saw earlier consequence
-            high_stress = batch["consequences"] > 1.0
-            obs_tau[high_stress] = 8   # 2h
-            d_loss = self.delay_net.update(
-                batch["hiddens"], obs_tau,
-                weights=np.ones(len(obs_tau), np.float32))
-            self.last_delay_loss = d_loss
+        # 8. Lambda update (unscaled lam_raw supervised by causal consequence + hit-freq)
+        if self.use_consequence and self.fixed_lambda is None:
+            lam_raw_now = self.lambda_net.forward(S)
+            mag_target  = sigmoid(2.0 * (C_target - 1.0))
+            freq_target = np.full(B, self._hit_freq_ema, np.float32)
+            w           = self.hit_freq_weight
+            lam_target  = (1 - w) * mag_target + w * freq_target
+            lam_norm    = lam_raw_now / self.lambda_max
+            lam_errors  = lam_norm - lam_target
+            self.lambda_net.backward_update(S, lam_errors, weight_decay=self.lambda_wd)
 
         self.last_mean_C = float(C_pred.mean())
         self.update_count += 1

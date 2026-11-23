@@ -35,10 +35,49 @@ def _fmt_eta(sec):
 
 def build_agents(seed: int) -> dict:
     return {
-        "GridACPL":    GridACPLAgent(seed=seed),
-        "RuleBase":    RuleBasedAgent(seed=seed),
-        "RandomAgent": RandomAgent(seed=seed),
+        "GridACPL":     GridACPLAgent(seed=seed, name="GridACPL"),
+        "PPO-FixedLam": GridACPLAgent(seed=seed, fixed_lambda=1.0,
+                                      use_causal_attr=False, gov_coef=0.0,
+                                      name="PPO-FixedLam"),
+        "PPO":          GridACPLAgent(seed=seed, use_consequence=False,
+                                      use_causal_attr=False, gov_coef=0.0,
+                                      name="PPO"),
+        "RuleBase":     RuleBasedAgent(seed=seed),
+        "RandomAgent":  RandomAgent(seed=seed),
     }
+
+
+def collect_episode_trace(agent, env_name="grid_storm", max_steps=96, seed=77777):
+    """Collect single-episode operational timeline for qualitative case-study plot."""
+    from environments.grid_env import GRID_ENV_REGISTRY
+    env = GRID_ENV_REGISTRY[env_name](max_steps=max_steps, seed=seed)
+    agent.reset_hidden()
+    state = env.reset()
+    trace = {k: [] for k in (
+        "demand", "demand_mw", "supply_mw", "load_shed_mw",
+        "gas_mw", "coal_mw", "nuclear_mw", "renewable_mw", "spot_bought_mw",
+        "frequency", "equipment_stress", "battery_soc", "lambda_val",
+    )}
+    while not env.done:
+        s_norm = agent.normalizer.normalize(state)
+        lam = float(agent.lambda_net.forward(s_norm)) * agent.lambda_scale
+        action = agent.select_action(state, eval_mode=True)
+        state, _, _, done, info = env.step(action)
+        trace["demand"].append(info["demand_mw"])
+        trace["demand_mw"].append(info["demand_mw"])
+        trace["supply_mw"].append(info["supply_mw"])
+        trace["load_shed_mw"].append(info["load_shed_mw"])
+        trace["gas_mw"].append(env.gs.gas_mw)
+        trace["coal_mw"].append(env.gs.coal_mw)
+        trace["nuclear_mw"].append(env.gs.nuclear_mw)
+        trace["renewable_mw"].append(info["renewable_mw"])
+        trace["spot_bought_mw"].append(env.gs.spot_bought_mw)
+        trace["frequency"].append(info["frequency"])
+        trace["equipment_stress"].append(info["equipment_stress"])
+        trace["battery_soc"].append(info["battery_soc"])
+        trace["lambda_val"].append(lam / agent.lambda_max)
+        if done: break
+    return trace
 
 
 def collect_lambda_data(agent, n_episodes=20, max_steps=96, seed=88888):
@@ -162,6 +201,11 @@ def run_benchmark(args):
             state_lambda_pairs = lam_pairs,
             delay_history   = delay_hist,
         )
+        if acpl_agent:
+            from evaluation.plots import plot_grid_operations
+            trace = collect_episode_trace(acpl_agent, env_name="grid_storm",
+                                          max_steps=args.max_steps, seed=args.seed + 555)
+            plot_grid_operations(trace, args.out, episode=0)
 
         print(f"  ✓ Plots saved to {args.out}/ in {_fmt_eta(time.time()-t0)}")
 

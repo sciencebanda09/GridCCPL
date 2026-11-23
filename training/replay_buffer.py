@@ -7,6 +7,7 @@ class Transition:
     state: np.ndarray; action: np.ndarray; reward: float
     next_state: np.ndarray; consequence: float; done: bool
     hidden: np.ndarray; next_hidden: np.ndarray
+    obs_delay: int = -1
     priority: float = 1.0
 
 class GridReplayBuffer:
@@ -15,13 +16,14 @@ class GridReplayBuffer:
         self.rng = np.random.default_rng(seed)
         self._buf: list = []; self._pos = 0
 
-    def push(self, state, action, reward, next_state, consequence, done, hidden, next_hidden):
+    def push(self, state, action, reward, next_state, consequence, done, hidden, next_hidden, obs_delay=-1):
         t = Transition(
             np.asarray(state,np.float32), np.asarray(action,np.float32),
             float(reward), np.asarray(next_state,np.float32),
             float(consequence), bool(done),
             np.asarray(hidden,np.float32).flatten(),
-            np.asarray(next_hidden,np.float32).flatten())
+            np.asarray(next_hidden,np.float32).flatten(),
+            int(obs_delay))
         if len(self._buf) < self.capacity: self._buf.append(t)
         else: self._buf[self._pos] = t
         self._pos = (self._pos+1) % self.capacity
@@ -39,6 +41,7 @@ class GridReplayBuffer:
             "dones":        np.array([x.done        for x in b],np.float32),
             "hiddens":      np.stack([x.hidden      for x in b]),
             "next_hiddens": np.stack([x.next_hidden for x in b]),
+            "obs_delays":   np.array([x.obs_delay   for x in b],np.int32),
             "weights":      np.ones(batch_size,np.float32),
         }
 

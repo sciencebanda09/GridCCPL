@@ -1,41 +1,52 @@
-# GridCCPL — Energy Grid Load Balancing Benchmark 
+# GridCCPL — Energy Grid Load Balancing Benchmark
 
-GridCCPL is an energy grid benchmark built on Causal Consequence-Penalized Learning applied to power grid management. 
+GridCCPL is an energy grid benchmark built on Causal Consequence-Penalized Learning applied to power grid management.
 Designed to study consequence-aware reinforcement learning under delayed system stress, fluctuating demand, and operational constraints.
 
-## Quick Start
+The repository has two parts:
+
+| Part | Folder | What it is |
+|---|---|---|
+| Benchmark + RL agent | `agents/ environments/ networks/ training/ evaluation/ run.py` | 18-state / 5-action grid environment, the GridCCPL agent, PPO ablations, rule-based baselines |
+| Wear-pricing research code | `twoclock/` | Two-timescale dispatch (DC-OPF + equipment wear): wear shadow price, LP-dual certificate, baselines, outage tiers, real-market audits |
+
+---
+
+## Part 1 — GridCCPL benchmark
+
+### Quick Start
 
 ```bash
-cd energy_grid
+pip install -r requirements.txt
 python run.py --quick          # 100 episodes, fast test
 python run.py --episodes 1000  # full training
 python run.py --help           # all options
 ```
 
-## Project Structure
+### Project Structure
 
 ```
-energy_grid/
-├── run.py                         ← ENTRY POINT
-├── environments/
-│   └── grid_env.py                ← Grid simulation (18-state, 5-action)
-├── agents/
-│   ├── grid_CCPL_agent.py         ← GridCCPL continuous agent
-│   └── baselines.py               ← RuleBase, RandomAgent
-├── networks/
-│   └── grid_networks.py           ← GRU, Actor, Critic, Lambda, Delay nets
-├── training/
-│   ├── train_grid.py              ← Training loop, evaluation, logging
-│   └── replay_buffer.py           ← Experience replay
-├── evaluation/
-│   └── plots.py                   ← Training curves, lambda heatmap, etc.
-├── utils/
-│   └── normalizer.py              ← Online state normalizer
-├── logs/                          ← JSON training logs (auto-created)
-└── results/                       ← Plots (auto-created)
+run.py                         ← ENTRY POINT
+run_seeds.py                   ← multi-seed runs
+environments/
+└── grid_env.py                ← Grid simulation (18-state, 5-action)
+agents/
+├── grid_acpl_agent.py         ← GridCCPL continuous agent (+ PPO ablations)
+└── baselines.py               ← RuleBase, RandomAgent
+networks/
+└── grid_networks.py           ← GRU, Actor, Critic, Lambda, Delay nets
+training/
+├── train_grid.py              ← Training loop, evaluation, logging
+└── replay_buffer.py           ← Experience replay
+evaluation/
+└── plots.py                   ← Training curves, lambda heatmap, etc.
+utils/
+└── normalizer.py              ← Online state normalizer
+dashboard/                     ← HTML dashboard generator
+logs/  results/                ← auto-created at run time (git-ignored)
 ```
 
-## What CCPL Does Here
+### What CCPL Does Here
 
 | Component        | Grid Role                                              |
 |------------------|--------------------------------------------------------|
@@ -45,28 +56,104 @@ energy_grid/
 | Delay estimator  | Learns that stress signals arrive ~4h after overload   |
 | Hit-freq EMA     | Tracks how often consequence thresholds are breached   |
 
-## State Space (18-dim)
+### State Space (18-dim)
 load_norm, renewable_fraction, spot_price, equipment_stress, reserve_margin,
 frequency_deviation, gas/coal/nuclear/renewable outputs, battery_soc,
 time encoding (sin/cos), temperature, cumulative_stress_24h, market_trend
 
-## Action Space (5-dim continuous, each ∈ [-1, 1])
+### Action Space (5-dim continuous, each ∈ [-1, 1])
 gas_delta, coal_delta, market_action, load_shed, battery_action
 
-## Environments
+### Environments
 - `energy_grid`  — standard (training)
 - `grid_easy`    — reduced demand (training)
 - `grid_hard`    — high demand (training + eval)
 - `grid_storm`   — extreme renewable variability (unseen)
 - `grid_peak`    — heatwave +25% demand (unseen)
 
-## Sample Results
+### Sample Results
 
-### Training Curves
+#### Training Curves
 ![Training Curves](results_sample/01_training_curves.png)
 
-### State Conditioned Lambda
+#### State Conditioned Lambda
 ![Lambda Heatmap](results_sample/03_lambda_heatmap.png)
 
-### Benchmark Comparison
+#### Benchmark Comparison
 ![Benchmark Comparison](results_sample/05_benchmark_comparison.png)
+
+---
+
+## Part 2 — Wear pricing for two-timescale dispatch (`twoclock/`)
+
+Power-system dispatch runs on two clocks: minutes for dispatch, hours to months for
+equipment wear that later appears as derated capacity, worse heat rates and forced
+outages. `twoclock/` prices wear as a shadow price `mu` (dollars per model wear unit)
+that enters the DC-OPF linearly above a stress threshold, so the fast problem stays a
+linear program. With the model known, episode cost is flat on a price band whose edges
+are LP duals; the **dual certificate** computes that band from a few rollouts.
+
+Main components (`twoclock/`):
+
+```
+physics/        5-bus DC network, wear ODE, derating / heat-rate, DC-OPF LP with duals
+envs/           15-minute environment with a slow (wear) clock
+agents/         blind / priced OPF, dual certificate (lazy exact probe), value-gradient learners
+experiments/    one script per experiment (table below)
+results/        JSON outputs of every experiment (small, committed)
+selfcheck.py    physics / LP-equivalence invariants
+```
+
+### Setup
+
+```bash
+pip install -r twoclock/requirements.txt
+python -m twoclock.selfcheck      # run from the repository root
+```
+
+### Experiments
+
+Run every command from the repository root. Training seeds are always `>= 101` and are
+disjoint from held-out test seeds (`1-5`, `1-20` or `1-40` depending on the script).
+Scripts that use several worker processes need roughly 1 GB RAM each.
+
+| Command | What it does | Output |
+|---|---|---|
+| `python -m twoclock.experiments.r10_verify` | Numerical verification of the price-band proposition | `r10_verify.json` |
+| `python -m twoclock.experiments.r6_certificate` | Dual certificate vs. constant-price sweep, 7 regimes + 14/30-bus | `r6_certificate.json` |
+| `python -m twoclock.experiments.r13_baselines` | Bisection, hard-cap and cap-unless-shedding baselines; 20 seeds; simulator steps / LP solves / wall-clock | `r13_baselines.json` |
+| `python -m twoclock.experiments.r14_lazy_check` | Lazy vs. full certificate probe: exactness and speed | `r14_lazy_check.json` |
+| `python -m twoclock.experiments.r15_misspec` | Certificate computed under a misspecified aging model, deployed in the true one | `r15_misspec.json` |
+| `python -m twoclock.experiments.r16_mpc_oracle` | Receding-horizon perfect-foresight price oracle vs. the certificate | `r16_mpc_oracle.json` |
+| `python -m twoclock.experiments.r17_long_memory` | Long-memory wear (thermal time constant 12-48 h) | `r17_long_memory.json` |
+| `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
+| `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
+| `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
+| `python -m twoclock.experiments.r4_robust` | 42-configuration robustness suite | `r4_robust.json` |
+| `python -m twoclock.experiments.r7_cert_robust` | Certificate across the 42 configurations | `r7_cert_robust.json` |
+| `python -m twoclock.experiments.r8_congestion` | Congested 5/14/30-bus grids, per-unit vs. scalar price | `r8_congestion.json` |
+| `python -m twoclock.experiments.r9_twoclock` | Two-clock certificate analysis | `r9_twoclock.json` |
+| `python -m twoclock.experiments.r11_risk_outages` | Outage risk tiers (40 test seeds, exact LP) | `r11_risk_outages.json` |
+| `python -m twoclock.experiments.r5_stage3` | Synthetic price-identification study + ENTSO-E aggregate audit | `r5_stage3.json` |
+| `python -m twoclock.experiments.r12_unit_real_data` | NYISO 2024 + EPA CEMS unit-level audit | `r12_unit_real_data.json` |
+
+### External data (only for the two audit experiments)
+
+* **ENTSO-E Spain** (`r5_stage3`, `real_iso_discovery`): place `energy_dataset.csv` from the
+  public Kaggle dataset *energy-consumption-generation-prices-and-weather* in
+  `twoclock/data/` (or set `TWOCLOCK_DATA`). Not included in this repository.
+* **NYISO 2024 + EPA CEMS** (`r12_unit_real_data`): downloaded and cached automatically from
+  public sources (Catalyst Cooperative PUDL open data and NYISO OASIS day-ahead LBMP
+  archives). Needs `duckdb`, `pyarrow` and `requests`.
+
+### Known limits of the method (measured, see the result JSONs)
+
+* The certificate needs the stress threshold `sigma` to be right: a wrong belief
+  (0.80 or 0.90 instead of 0.85) loses a large share of the saving (`r15_misspec.json`).
+  It is insensitive to the aging rate, damage curvature and thermal time constant
+  within 1.5-6 h.
+* It is a method for wear that decays within about a day; with a thermal time constant
+  of 24-48 h the best constant price lies above the certificate band (`r17_long_memory.json`).
+* It needs fewer simulator steps than a sweep or bisection, but a bisection is faster in
+  wall-clock (`r13_baselines.json`, `r14_lazy_check.json`).
+* Wear parameters are reduced-form and uncalibrated; dollar savings are illustrative.

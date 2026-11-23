@@ -210,3 +210,46 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ---------------------------------------------------------------
+# Private / not for the public repo (kept on the local machine only)
+# ---------------------------------------------------------------
+# manuscripts, submission notes and LaTeX build files
+paper/
+paper_*/
+supplementary*/
+research/
+_scratch/
+scratch/
+SUBMISSION*.md
+*.tex
+*.bbl
+*.blg
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+refs*.bib
+aaai*.sty
+aaai*.bst
+
+# downloaded datasets and caches (re-downloaded by the scripts)
+data/
+twoclock/data/
+*.csv
+*.parquet
+*.duckdb
+*.zip
+
+# credentials and secrets
+.env
+.env.*
+kaggle.json
+*accessKeys*
+*.pem
+*.key
+.claude/
+
+# keep the research result JSONs (the generic results/ rule above is for run outputs)
+!twoclock/results/

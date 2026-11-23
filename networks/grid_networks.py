@@ -58,10 +58,10 @@ class LayerNorm:
         return self.g * x_hat + self.b
 
     def backward(self, d_out):
-        x_hat, std = self._cache; B, D = d_out.shape[0], d_out.shape[-1]
+        x_hat, std = self._cache; D = d_out.shape[-1]
         dg = (d_out * x_hat).sum(0); db_g = d_out.sum(0)
         dx_hat = d_out * self.g
-        dx = (1.0 / (B * std)) * (B * dx_hat - dx_hat.sum(-1, keepdims=True)
+        dx = (1.0 / (D * std)) * (D * dx_hat - dx_hat.sum(-1, keepdims=True)
              - x_hat * (dx_hat * x_hat).sum(-1, keepdims=True))
         return dx, dg, db_g
 
@@ -155,6 +155,40 @@ def gru_batch_forward(cell, X, H):
     return (1-z)*n + z*H
 
 
+def gru_batch_backward(cell, X, H, dH_new):
+    """Exact single-step backward pass matching cell.params() order."""
+    X = np.asarray(X, np.float32)
+    H = np.asarray(H, np.float32)
+    dH_new = np.asarray(dH_new, np.float32)
+
+    r = sigmoid(X @ cell.Wr + H @ cell.Ur + cell.br)
+    z = sigmoid(X @ cell.Wz + H @ cell.Uz + cell.bz)
+    rH = r * H
+    n = tanh(X @ cell.Wn + rH @ cell.Un + cell.bn)
+
+    dz = dH_new * (H - n)
+    dn = dH_new * (1.0 - z)
+    dn_pre = dn * (1.0 - n * n)
+
+    dWn = X.T @ dn_pre
+    dbn = dn_pre.sum(0)
+    dUn = rH.T @ dn_pre
+    drH = dn_pre @ cell.Un.T
+    dr = drH * H
+
+    dz_pre = dz * z * (1.0 - z)
+    dWz = X.T @ dz_pre
+    dUz = H.T @ dz_pre
+    dbz = dz_pre.sum(0)
+
+    dr_pre = dr * r * (1.0 - r)
+    dWr = X.T @ dr_pre
+    dUr = H.T @ dr_pre
+    dbr = dr_pre.sum(0)
+
+    return [dWr, dUr, dbr, dWz, dUz, dbz, dWn, dUn, dbn]
+
+
 # ── GRU Policy Network (discrete — for baseline comparison) ───────────────────
 
 class GRUPolicyNet:
@@ -190,6 +224,7 @@ class GaussianActorGRU:
     def __init__(self, state_dim, action_dim, gru_dim=64, hidden_dim=128,
                  n_layers=2, lr=8e-4, seed=0):
         rng = np.random.default_rng(seed)
+        self.rng = np.random.default_rng(seed + 101)
         self.action_dim = action_dim; self.gru_dim = gru_dim
         self.gru       = GRUCell(state_dim, gru_dim, rng)
         self.trunk     = MLP([gru_dim]+[hidden_dim]*n_layers, rng, scale=0.05)
@@ -206,13 +241,59 @@ class GaussianActorGRU:
         lsd   = np.clip(self.lsd_head.forward(feat), self.LOG_STD_MIN, self.LOG_STD_MAX)
         return mean.squeeze(0), lsd.squeeze(0), h_new
 
+    def forward_batch(self, s, h):
+        h_new   = gru_batch_forward(self.gru, s, h)
+        feat    = self.trunk.forward(h_new)
+        mean    = self.mean_head.forward(feat)
+        lsd_raw = self.lsd_head.forward(feat)
+        lsd     = np.clip(lsd_raw, self.LOG_STD_MIN, self.LOG_STD_MAX)
+        return mean, lsd, lsd_raw, h_new
+
     def sample(self, s, h, eval_mode=False):
         mean, lsd, h_new = self.forward(s, h)
-        if eval_mode: return np.tanh(mean), 0.0, h_new, np.zeros_like(mean)
-        std = np.exp(lsd); eps = np.random.standard_normal(self.action_dim).astype(np.float32)
-        raw = mean + std * eps; action = np.tanh(raw)
+        if eval_mode:
+            raw = mean
+            return np.tanh(raw), 0.0, h_new, raw.astype(np.float32)
+        std = np.exp(lsd)
+        eps = self.rng.standard_normal(self.action_dim).astype(np.float32)
+        raw = mean + std * eps
+        action = np.tanh(np.clip(raw, -20.0, 20.0))
         lp  = (-0.5*(eps**2+2*lsd+np.log(2*np.pi)) - np.log(1-action**2+1e-6)).sum()
-        return action, float(lp), h_new, eps
+        return action, float(lp), h_new, raw.astype(np.float32)
+
+    def backward_update(self, s, h, raw_actions, old_log_probs, advantages,
+                        clip_eps=0.2, ent_coef=0.01, gov_grad_mean=None):
+        B = len(s)
+        mean, lsd, lsd_raw, _ = self.forward_batch(s, h)
+        std      = np.exp(lsd)
+        diff     = (raw_actions - mean) / (std + 1e-8)
+        tanh_raw = np.tanh(np.clip(raw_actions, -20.0, 20.0))
+        new_lp   = (-0.5 * (diff**2 + 2.0 * lsd + np.log(2.0 * np.pi))
+                    - np.log(1.0 - tanh_raw**2 + 1e-6)).sum(-1)
+
+        log_ratio = np.clip(new_lp - old_log_probs, -10.0, 10.0)
+        ratio     = np.exp(log_ratio)
+        surr1     = ratio * advantages
+        surr2     = np.clip(ratio, 1.0 - clip_eps, 1.0 + clip_eps) * advantages
+        unclipped = ((advantages >= 0) & (ratio <= 1.0 + clip_eps)) | (
+                    (advantages < 0) & (ratio >= 1.0 - clip_eps))
+
+        d_new_lp = -np.where(unclipped, ratio * advantages, 0.0) / B
+        d_mean   = d_new_lp[:, None] * diff / (std + 1e-8)
+        if gov_grad_mean is not None:
+            d_mean = d_mean + gov_grad_mean / B
+        d_lsd    = d_new_lp[:, None] * (diff**2 - 1.0) - (ent_coef / B)
+        lsd_mask = ((lsd_raw >= self.LOG_STD_MIN) & (lsd_raw <= self.LOG_STD_MAX)).astype(np.float32)
+        d_lsd   *= lsd_mask
+
+        d_f_mean, dWm, dbm = self.mean_head.backward(d_mean)
+        d_f_lsd,  dWl, dbl = self.lsd_head.backward(d_lsd)
+        d_h_new, trunk_grads = self.trunk.backward(d_f_mean + d_f_lsd)
+        gru_grads = gru_batch_backward(self.gru, s, h, d_h_new)
+        self.optim.step(gru_grads + trunk_grads + [dWm, dbm, dWl, dbl])
+
+        ent = float((lsd + 0.5 * np.log(2.0 * np.pi * np.e)).sum(-1).mean())
+        return float(-np.mean(np.minimum(surr1, surr2)) - ent_coef * ent)
 
     def _flat(self): return self.gru.params()+self.trunk.all_params()+self.mean_head.params()+self.lsd_head.params()
 
@@ -237,11 +318,12 @@ class CriticGRU:
     def backward_update(self, s, h, targets, weights):
         H = gru_batch_forward(self.gru, s, h); feat = self.trunk.forward(H)
         v = self.vhead.forward(feat).squeeze(-1); B = len(targets)
-        err = np.clip((targets-v)*weights, -5, 5)
+        err = np.clip((v - targets) * weights, -20, 20)
         d_v, dWv, dbv = self.vhead.backward((err/B)[:,None])
         d_f, tg = self.trunk.backward(d_v)
-        self.optim.step([np.zeros_like(p) for p in self.gru.params()] + tg + [dWv, dbv])
-        return float(np.mean(err**2))
+        gg = gru_batch_backward(self.gru, s, h, d_f)
+        self.optim.step(gg + tg + [dWv, dbv])
+        return float(np.mean(((v - targets) * weights)**2))
 
     def _flat(self): return self.gru.params()+self.trunk.all_params()+self.vhead.params()
 
@@ -288,9 +370,15 @@ class MultiHorizonConsequenceNet:
     @property
     def horizon_blend(self): return softmax(self.horizon_w[None]).squeeze()
 
+    def _encode_actions(self, actions):
+        actions = np.asarray(actions, np.float32)
+        if actions.ndim == 2 and actions.shape[-1] == self.action_dim:
+            return actions
+        return np.eye(max(self.action_dim,1),dtype=np.float32)[np.clip(actions.astype(int),0,self.action_dim-1)]
+
     def _tf(self, trunk, heads, states, actions):
-        oh = np.eye(max(self.action_dim,1),dtype=np.float32)[np.clip(actions.astype(int),0,self.action_dim-1)]
-        x  = np.concatenate([states,oh],-1); H = trunk.forward(x)
+        act_feat = self._encode_actions(actions)
+        x  = np.concatenate([states, act_feat], -1); H = trunk.forward(x)
         a,b,g = self.alpha, self.beta, self.gamma; out={}
         for key in ("short","mid","long"):
             F=softplus(heads[key]["f"].forward(H)); U=softplus(heads[key]["u"].forward(H))
@@ -310,24 +398,53 @@ class MultiHorizonConsequenceNet:
     def predict(self, states, actions):
         C,_,_,_,sigma = self.forward(states,actions); return C,sigma
 
+    def action_gradient(self, states, actions):
+        """Compute dC/da for continuous actions (B, action_dim)."""
+        act_feat = self._encode_actions(actions)
+        x_in = np.concatenate([states, act_feat], -1)
+        w = self.horizon_blend
+        a, b, g = self.alpha, self.beta, self.gamma
+        grad_a = np.zeros((len(states), self.action_dim), np.float32)
+        for trunk, heads in [(self.trunk_a, self.heads_a), (self.trunk_b, self.heads_b)]:
+            H = trunk.forward(x_in)
+            td = np.zeros_like(H)
+            for hz, hw in zip(("short", "mid", "long"), w):
+                Fr = heads[hz]["f"].forward(H)
+                Ur = heads[hz]["u"].forward(H)
+                Dr = heads[hz]["d"].forward(H)
+                ones = np.full((len(states), 1), 0.5 * float(hw), np.float32)
+                for hl, sc, raw in [(heads[hz]["f"], a, Fr), (heads[hz]["u"], b, Ur), (heads[hz]["d"], g, Dr)]:
+                    dH, _, _ = hl.backward(ones * sc * d_softplus(raw))
+                    td += dH
+            dx, _ = trunk.backward(td)
+            grad_a += dx[:, -self.action_dim:]
+        return grad_a
+
     def update_step(self, states, actions, targets, weights):
         B = len(actions)
-        oh = np.eye(max(self.action_dim,1),dtype=np.float32)[np.clip(actions.astype(int),0,self.action_dim-1)]
-        x_in = np.concatenate([states,oh],-1); w=self.horizon_blend
+        act_feat = self._encode_actions(actions)
+        x_in = np.concatenate([states, act_feat], -1); w = self.horizon_blend
         a,b,g = self.alpha,self.beta,self.gamma
         tgl=[]; hgl=[]; c_loss=0.0
+        horizons = ("short","mid","long")
+        horizon_preds = {hz: np.zeros(B, np.float32) for hz in horizons}
         for trunk,heads in [(self.trunk_a,self.heads_a),(self.trunk_b,self.heads_b)]:
             H=trunk.forward(x_in); td=np.zeros_like(H); hg=[]
-            for hz,hw in zip(("short","mid","long"),w):
+            for hz,hw in zip(horizons, w):
                 Fr=heads[hz]["f"].forward(H); Ur=heads[hz]["u"].forward(H); Dr=heads[hz]["d"].forward(H)
                 F=softplus(Fr); U=softplus(Ur); D=softplus(Dr)
                 C_h=(a*F+b*U+g*D).squeeze(-1)
-                err=(C_h-targets)*weights/(B*2); c_loss+=float(np.mean(err**2))*float(hw)
+                horizon_preds[hz] += 0.5 * C_h
+                err = np.clip((C_h - targets) * weights, -10.0, 10.0)
+                c_loss += float(np.mean(err**2)) * float(hw) * 0.5
+                grad_h = (err * float(hw) / B)[:, None]
                 for hl,sc,raw in [(heads[hz]["f"],a,Fr),(heads[hz]["u"],b,Ur),(heads[hz]["d"],g,Dr)]:
-                    ds=err[:,None]*sc*d_softplus(raw); dH,dW,db=hl.backward(ds); td+=dH; hg.extend([dW,db])
+                    ds=grad_h*sc*d_softplus(raw); dH,dW,db=hl.backward(ds); td+=dH; hg.extend([dW,db])
             _,tp=trunk.backward(td); tgl.append(tp); hgl.append(hg)
-        C_t,_=self.predict(states,actions); be=(C_t-targets)*weights/B
-        dw=be.mean()*np.ones(3,np.float32)
+        C_t = w[0]*horizon_preds["short"] + w[1]*horizon_preds["mid"] + w[2]*horizon_preds["long"]
+        be  = np.clip((C_t - targets) * weights, -10.0, 10.0)
+        dL_dw = np.array([np.mean(be * horizon_preds[hz]) for hz in horizons], np.float32)
+        dw = w * (dL_dw - np.sum(w * dL_dw))
         d_a=np.array([be.mean()*a*0.01],np.float32)
         d_b=np.array([be.mean()*b*0.01],np.float32)
         d_g=np.array([be.mean()*g*0.01],np.float32)

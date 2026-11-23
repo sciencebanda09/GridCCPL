@@ -8,11 +8,13 @@ import matplotlib.gridspec as gridspec
 
 
 COLORS = {
-    "GridACPL":   "#2196F3",
-    "RuleBase":   "#FF9800",
-    "RandomAgent":"#9E9E9E",
-    "MPC":        "#4CAF50",
-    "default":    "#607D8B",
+    "GridACPL":     "#2196F3",
+    "PPO-FixedLam": "#009688",
+    "PPO":          "#9C27B0",
+    "RuleBase":     "#FF9800",
+    "RandomAgent":  "#9E9E9E",
+    "MPC":          "#4CAF50",
+    "default":      "#607D8B",
 }
 
 def _color(name):

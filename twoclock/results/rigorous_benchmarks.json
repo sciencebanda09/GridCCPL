@@ -1,0 +1,361 @@
+{
+  "env_version": "twoclock-env-1",
+  "suite1_paradigms": {
+    "paradigms": [
+      {
+        "method": "REINFORCE pilot (no OPF)",
+        "train_steps": 7200,
+        "cost_mean_m": 52.15045537201509,
+        "cost_std_m": 0.29484300530482016,
+        "wear_mean": 1.8607344814872794e-36,
+        "unserved_mwh": 9020.214347754538,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.6940624166660806
+      },
+      {
+        "method": "REINFORCE+Lagrangian pilot (no OPF)",
+        "train_steps": 7200,
+        "cost_mean_m": 52.15046076870848,
+        "cost_std_m": 0.2948430036154908,
+        "wear_mean": 1.8607344814872794e-36,
+        "unserved_mwh": 9020.215438910733,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.661528479166312
+      },
+      {
+        "method": "Rule-Based Heuristic",
+        "train_steps": 0,
+        "cost_mean_m": 9.206733284276563,
+        "cost_std_m": 0.07408026904274478,
+        "wear_mean": 0.17138673627118775,
+        "unserved_mwh": 349.5810515911186,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.6691085625000899
+      },
+      {
+        "method": "Degradation-Blind OPF",
+        "train_steps": 0,
+        "cost_mean_m": 7.649264773679159,
+        "cost_std_m": 0.00501080050827941,
+        "wear_mean": 0.17260384156857037,
+        "unserved_mwh": 119.27067949014972,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.9204395416668376
+      },
+      {
+        "method": "Blind OPF + REINFORCE residual pilot",
+        "train_steps": 7200,
+        "cost_mean_m": 39.08755556909058,
+        "cost_std_m": 0.07806815358679563,
+        "wear_mean": 0.14404161753658026,
+        "unserved_mwh": 6473.098759577573,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.9753298541666785
+      },
+      {
+        "method": "Fixed myopic price OPF (mu=360)",
+        "train_steps": 0,
+        "cost_mean_m": 7.649158521449559,
+        "cost_std_m": 0.005027534374183286,
+        "wear_mean": 0.17260384156857037,
+        "unserved_mwh": 119.2706794901496,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.9177481250011018
+      },
+      {
+        "method": "CMDP Dual-Ascent OPF",
+        "train_steps": 8640,
+        "cost_mean_m": 6.973876393495577,
+        "cost_std_m": 0.02915547861418317,
+        "wear_mean": 0.0723197464362268,
+        "unserved_mwh": 40.66826494872341,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.8891474583333547
+      },
+      {
+        "method": "Value-Gradient OPF (Ours)",
+        "train_steps": 4320,
+        "cost_mean_m": 6.730460905692832,
+        "cost_std_m": 0.005007559506164571,
+        "wear_mean": 1.8607344814872794e-36,
+        "unserved_mwh": 3.1132875172407353,
+        "overload_mwh": 0.0,
+        "ms_per_step": 0.9426661250010208
+      }
+    ],
+    "paired_ttest_t": 1199.1081541597239,
+    "paired_ttest_p": 2.9021229771765572e-12
+  },
+  "suite2_multiscale_topologies": {
+    "topologies": [
+      {
+        "topology": "5-bus (6 lines)",
+        "n_bus": 5,
+        "n_line": 6,
+        "blind_cost_m": 7.649264773679159,
+        "zeroshot_cost_m": 6.730460905692832,
+        "saving_pct": 12.01166249530148,
+        "blind_unserved_mwh": 119.27067949014972,
+        "zeroshot_unserved_mwh": 3.1132875172407353,
+        "blind_wear": 0.17260384156857037,
+        "zeroshot_wear": 1.8607344814872794e-36,
+        "ms_per_step": 0.9650437708341997
+      },
+      {
+        "topology": "IEEE 14-bus (20 lines)",
+        "n_bus": 14,
+        "n_line": 20,
+        "blind_cost_m": 7.788811261264426,
+        "zeroshot_cost_m": 6.887107480976448,
+        "saving_pct": 11.57691141872138,
+        "blind_unserved_mwh": 119.27067949014994,
+        "zeroshot_unserved_mwh": 3.1132875172407353,
+        "blind_wear": 0.17240761965355147,
+        "zeroshot_wear": 1.8607344814872794e-36,
+        "ms_per_step": 0.9283108541671936
+      },
+      {
+        "topology": "IEEE 30-bus (41 lines)",
+        "n_bus": 30,
+        "n_line": 41,
+        "blind_cost_m": 9.590176268794732,
+        "zeroshot_cost_m": 8.682040519944701,
+        "saving_pct": 9.469437509767097,
+        "blind_unserved_mwh": 338.84444177792716,
+        "zeroshot_unserved_mwh": 224.01099274222943,
+        "blind_wear": 0.15345813411459716,
+        "zeroshot_wear": 1.8607344814872794e-36,
+        "ms_per_step": 1.5114567083340567
+      }
+    ]
+  },
+  "suite3_clock_physics_sweep": {
+    "tau_sweep": [
+      {
+        "tau_thermal_h": 1.0,
+        "blind_cost_m": 7.58858807578373,
+        "priced_cost_m": 6.721616964234198,
+        "saving_pct": 11.4246695550146,
+        "blind_wear": 0.13806635306718232,
+        "priced_wear": 7.706241057429051e-106
+      },
+      {
+        "tau_thermal_h": 3.0,
+        "blind_cost_m": 7.649146422019341,
+        "priced_cost_m": 6.73072088553091,
+        "saving_pct": 12.006902284477006,
+        "blind_wear": 0.17396328891957902,
+        "priced_wear": 1.8607344814872794e-36
+      },
+      {
+        "tau_thermal_h": 6.0,
+        "blind_cost_m": 7.473814323157678,
+        "priced_cost_m": 6.741995479254932,
+        "saving_pct": 9.791771808341554,
+        "blind_wear": 0.1942897651257914,
+        "priced_wear": 4.1291126489742825e-19
+      },
+      {
+        "tau_thermal_h": 12.0,
+        "blind_cost_m": 7.492655493392917,
+        "priced_cost_m": 6.764989847925622,
+        "saving_pct": 9.71171897745674,
+        "blind_wear": 0.21468012893525076,
+        "priced_wear": 1.9454110304683252e-10
+      },
+      {
+        "tau_thermal_h": 24.0,
+        "blind_cost_m": 7.676354070475324,
+        "priced_cost_m": 6.8107064898148755,
+        "saving_pct": 11.276806316033404,
+        "blind_wear": 0.22462812943320976,
+        "priced_wear": 4.222850825944277e-06
+      },
+      {
+        "tau_thermal_h": 48.0,
+        "blind_cost_m": 8.064871828804629,
+        "priced_cost_m": 6.902059535037458,
+        "saving_pct": 14.418236500846183,
+        "blind_wear": 0.22944307389521282,
+        "priced_wear": 0.000622167289640013
+      }
+    ],
+    "sigma_scaling": [
+      {
+        "sigma": 0.75,
+        "mu_suff_theory": 8272.727272727272,
+        "mu_suff_empirical": 6500.0
+      },
+      {
+        "sigma": 0.8,
+        "mu_suff_theory": 6618.181818181817,
+        "mu_suff_empirical": 5500.0
+      },
+      {
+        "sigma": 0.85,
+        "mu_suff_theory": 4963.636363636364,
+        "mu_suff_empirical": 4500.0
+      },
+      {
+        "sigma": 0.9,
+        "mu_suff_theory": 3309.0909090909086,
+        "mu_suff_empirical": 2500.0
+      }
+    ]
+  },
+  "suite4_entsoe_16quarters": {
+    "quarters": [
+      {
+        "quarter": "2015-Q1",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.444487826091,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2015-Q2",
+        "mu_hat": 5737.728816077348,
+        "interval_lo": 1.0,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 60.10953997795316,
+        "coal_adder_mwh": 119.21725428960708,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2015-Q3",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.444487826091,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2015-Q4",
+        "mu_hat": 6112.902861313991,
+        "interval_lo": 3128.36683754898,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 64.03993473757514,
+        "coal_adder_mwh": 127.012537229524,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2016-Q1",
+        "mu_hat": 1588.9703813944122,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.476511373286,
+        "gas_adder_mwh": 16.64635637651289,
+        "coal_adder_mwh": 33.01527348008389,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2016-Q2",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 1524.284057212305,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2016-Q3",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.444487826091,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2016-Q4",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.444487826091,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2017-Q1",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      },
+      {
+        "quarter": "2017-Q2",
+        "mu_hat": 2808.8918031452927,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.372295038071,
+        "gas_adder_mwh": 29.42648555676021,
+        "coal_adder_mwh": 58.3625296875744,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2017-Q3",
+        "mu_hat": 4295.285328357368,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.416410062945,
+        "gas_adder_mwh": 44.99822724945813,
+        "coal_adder_mwh": 89.24648404475862,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2017-Q4",
+        "mu_hat": 11405.229771370101,
+        "interval_lo": 3128.276180347645,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 119.48335950959152,
+        "coal_adder_mwh": 236.97532969402317,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2018-Q1",
+        "mu_hat": 7149.039494190109,
+        "interval_lo": 3128.3047499792,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 74.89469946294399,
+        "coal_adder_mwh": 148.5411539348389,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2018-Q2",
+        "mu_hat": 1760.6728525540495,
+        "interval_lo": 1.0,
+        "interval_hi": 300000.0,
+        "gas_adder_mwh": 18.44514416961385,
+        "coal_adder_mwh": 36.58286926973413,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2018-Q3",
+        "mu_hat": 2808.8918031452927,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.372295038071,
+        "gas_adder_mwh": 29.42648555676021,
+        "coal_adder_mwh": 58.3625296875744,
+        "rejects_zero": true
+      },
+      {
+        "quarter": "2018-Q4",
+        "mu_hat": 1.5952998260304414,
+        "interval_lo": 1.0,
+        "interval_hi": 4295.444487826091,
+        "gas_adder_mwh": 0.016712664844128432,
+        "coal_adder_mwh": 0.03314678527418805,
+        "rejects_zero": false
+      }
+    ],
+    "median_mu_hat": 1674.821616974231,
+    "iqr_mu_hat": [
+      1.5952998260304414,
+      4655.896200287363
+    ],
+    "median_gas_adder": 17.54575027306337,
+    "median_coal_adder": 34.79907137490901
+  }
+}

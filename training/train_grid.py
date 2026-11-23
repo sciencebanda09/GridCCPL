@@ -50,7 +50,8 @@ def run_episode(agent, env, train=True, update_freq=4):
 
         if train:
             if is_acpl:
-                agent.store(state, action, r, ns, c, done, h_before, h_after)
+                agent.store(state, action, r, ns, c, done, h_before, h_after,
+                            obs_delay=info.get("observed_delay", -1))
             else:
                 agent.store(state, action, r, ns, c, done)
             if ep_steps % update_freq == 0:

@@ -1,0 +1,8 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+pandas>=2.0
+# Optional (only needed to re-download NYISO / EPA CEMS data in r12_unit_real_data.py):
+# duckdb>=1.0
+# pyarrow>=14.0
+# requests>=2.28

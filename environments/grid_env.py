@@ -133,11 +133,13 @@ class EnergyGridEnv:
         self.rng                = np.random.default_rng(seed)
 
         self._step              = 0
+        self._steps_taken       = 0
         self._done              = False
         self._total_reward      = 0.0
         self._total_consequence = 0.0
         self._delayed_hits      = 0
-        self._consequence_queue: List[float] = []
+        self._demand_now        = 0.0
+        self._consequence_queue: List[Tuple[float, int]] = []
         self._stress_history:   List[float] = []  # rolling 24h
         self._billing_acc:      float = 0.0       # 30-day accumulator
 
@@ -202,11 +204,15 @@ class EnergyGridEnv:
         hour = h * 0.25
         dow  = (self._step // 96) % 7
 
+        avail_batt_mw = min(
+            BATTERY_POWER_MW,
+            max(0.0, (gs.battery_soc - 0.05) * BATTERY_CAPACITY_MWH / TIMESTEP_HOURS),
+        )
         total_supply = (gs.gas_mw + gs.coal_mw + gs.nuclear_mw
                         + gs.renewable_mw + gs.spot_bought_mw
-                        + max(0, -gs.battery_soc * BATTERY_POWER_MW)
+                        + avail_batt_mw
                         - gs.load_shed_mw)
-        demand       = self._current_demand()
+        demand       = self._demand_now if self._demand_now > 0 else self._current_demand()
         reserve      = max(0, total_supply - demand) / MAX_CAPACITY_MW
 
         s = np.array([
@@ -236,6 +242,7 @@ class EnergyGridEnv:
     def reset(self) -> np.ndarray:
         start_hour = self.rng.integers(0, 96)
         self._step              = int(start_hour)
+        self._steps_taken       = 0
         self._done              = False
         self._total_reward      = 0.0
         self._total_consequence = 0.0
@@ -247,13 +254,14 @@ class EnergyGridEnv:
         self.gs = GridState(
             gas_mw        = float(self.rng.uniform(150, 280)),
             coal_mw       = float(self.rng.uniform(100, 220)),
-            nuclear_mw    = float(self.rng.uniform(160, 200)),
+            nuclear_mw    = float(self.rng.uniform(150, 170)),
             renewable_mw  = self._renewable_output(),
             battery_soc   = float(self.rng.uniform(0.3, 0.7)),
             hour          = int(start_hour),
             spot_price    = self._spot_price(),
             temperature   = self._temperature(),
         )
+        self._demand_now = self._current_demand()
         return self._encode_state()
 
     # ── Step ───────────────────────────────────────────────────────────────────
@@ -277,9 +285,9 @@ class EnergyGridEnv:
                                    0, GENERATOR_CAPS["gas"]))
         gs.coal_mw = float(np.clip(gs.coal_mw + coal_delta,
                                    0, GENERATOR_CAPS["coal"]))
-        # Nuclear barely ramps — small noise only
+        # Nuclear barely ramps — small noise around 80% baseload
         gs.nuclear_mw = float(np.clip(
-            gs.nuclear_mw + self.rng.normal(0, 2.0), 170, 200))
+            gs.nuclear_mw + self.rng.normal(0, 2.0), 145, 175))
 
         # 3. Renewable (uncontrollable)
         gs.renewable_mw = self._renewable_output()
@@ -287,16 +295,19 @@ class EnergyGridEnv:
         # 4. Spot market
         gs.spot_bought_mw = float(np.clip(mkt_action, -50, 80))
 
-        # 5. Battery
-        batt_delta = float(np.clip(batt_action,
+        # 5. Battery (energy-conserving within [0.05, 0.95] SoC limits)
+        batt_cmd   = float(np.clip(batt_action,
                                    -BATTERY_POWER_MW, BATTERY_POWER_MW))
-        energy_kwh  = batt_delta * TIMESTEP_HOURS
-        new_soc     = gs.battery_soc + energy_kwh / BATTERY_CAPACITY_MWH
-        gs.battery_soc = float(np.clip(new_soc, 0.05, 0.95))
-        batt_mw_net = -batt_delta   # negative = discharging into grid
+        new_soc_unclipped = gs.battery_soc + (batt_cmd * TIMESTEP_HOURS) / BATTERY_CAPACITY_MWH
+        new_soc    = float(np.clip(new_soc_unclipped, 0.05, 0.95))
+        actual_batt_delta = (new_soc - gs.battery_soc) * BATTERY_CAPACITY_MWH / TIMESTEP_HOURS
+        gs.battery_soc = new_soc
+        batt_mw_net = -actual_batt_delta   # positive = discharging into grid
 
         # 6. Load shedding
-        max_shed    = self._current_demand() * 0.20  # max 20% can be shed
+        gross_demand = self._current_demand()
+        self._demand_now = gross_demand
+        max_shed    = gross_demand * 0.20  # max 20% can be shed
         if shed_action > 0:
             shed_delta = shed_action * max_shed * 0.1
             gs.load_shed_mw = float(np.clip(gs.load_shed_mw + shed_delta, 0, max_shed))
@@ -305,7 +316,7 @@ class EnergyGridEnv:
             gs.load_shed_mw = float(max(0, gs.load_shed_mw - restore))
 
         # 7. Supply / demand balance
-        demand  = self._current_demand() - gs.load_shed_mw
+        demand  = gross_demand - gs.load_shed_mw
         supply  = (gs.gas_mw + gs.coal_mw + gs.nuclear_mw
                    + gs.renewable_mw + gs.spot_bought_mw + batt_mw_net)
         imbalance_mw = supply - demand
@@ -353,7 +364,7 @@ class EnergyGridEnv:
         )
         mkt_cost   = gs.spot_bought_mw * gs.spot_price * TIMESTEP_HOURS
         shed_cost  = gs.load_shed_mw * LOAD_SHED_COST * TIMESTEP_HOURS
-        freq_pen   = 50.0 * max(0, abs(gs.frequency - NOMINAL_FREQ) - FREQ_DEADBAND)
+        freq_pen   = 30000.0 * max(0, abs(gs.frequency - NOMINAL_FREQ) - FREQ_DEADBAND)
         total_cost = gen_cost + mkt_cost + shed_cost + freq_pen
 
         # Normalise reward to [-1, +1] range
@@ -381,13 +392,21 @@ class EnergyGridEnv:
         immediate_c = freq_c + billing_c
 
         # Push stress_c into delay queue (arrives in consequence_delay steps)
-        self._consequence_queue.append(stress_c)
+        self._consequence_queue.append((stress_c, self._step))
         if len(self._consequence_queue) > self.consequence_delay:
-            delayed_c = self._consequence_queue.pop(0)
+            delayed_c, pushed_step = self._consequence_queue.pop(0)
+            delayed_age = self._step - pushed_step
         else:
             delayed_c = 0.0
+            delayed_age = -1
 
         total_consequence = immediate_c + delayed_c
+        if delayed_c > 0.1 and delayed_age >= 0:
+            observed_delay = delayed_age
+        elif immediate_c > 0.1:
+            observed_delay = 0
+        else:
+            observed_delay = -1
 
         if total_consequence > 1.0:
             self._delayed_hits += 1
@@ -395,16 +414,13 @@ class EnergyGridEnv:
         self._total_reward      += reward
         self._total_consequence += total_consequence
         self._step              += 1
-        self._done = (self._step >= self.max_steps + (self._step - int(self._step % self.max_steps or self.max_steps)))
-
-        # Simpler done check:
-        steps_taken = self._step - (self._step % self.max_steps or self.max_steps) if False else None
-        self._done  = (self._step % self.max_steps == 0 and self._step > 0)
+        self._steps_taken       += 1
+        self._done              = (self._steps_taken >= self.max_steps)
 
         next_state = self._encode_state()
 
         info = {
-            "demand_mw":      demand + gs.load_shed_mw,
+            "demand_mw":      gross_demand,
             "supply_mw":      supply,
             "imbalance_mw":   imbalance_mw,
             "frequency":      gs.frequency,
@@ -415,6 +431,7 @@ class EnergyGridEnv:
             "gen_cost":       gen_cost,
             "immediate_c":    immediate_c,
             "delayed_c":      delayed_c,
+            "observed_delay": observed_delay,
             "stress_now":     stress_now,
             "renewable_mw":   gs.renewable_mw,
             "resource_load":  demand / MAX_CAPACITY_MW,  # ACPL compat
