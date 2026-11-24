@@ -144,6 +144,9 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r33_hazard_cluster` | State-clustered bootstrap/jackknife CI for the all-US hazard fit: (hatkappa=0.0086)/day, 95% CI 0.0073–0.0097 (48 states, 400/400 draws positive) | `r33_hazard_cluster.json` |
 | `python -m twoclock.experiments.plot_calibration` | Calibration figure (trip rate vs wear state; heat-rate effect) | `fig_calibration.pdf` |
 | `python -m twoclock.experiments.r34_heldout_screen` | Held-out validation of the (A) screen on 24 new random-parameter draws (frozen threshold): flags 12/14 failures, 3/10 sound; certificate within 0.5% of best constant in 10/24, worse than blind in 6 | `r34_heldout_screen.json` |
+| `python -m twoclock.experiments.r35_expected_trips` | Expected cost of Tier 0 vs Tier 3 at the calibrated hazard, computed from the trip-free wear path (no rare-event sampling) | `r35_expected_trips.json` |
+| `python -m twoclock.experiments.r36_screen_derating` | (A) screen on the calibrated derating variants: flags all 4 losing cases but 8 of 11 sound ones | `r36_screen_derating.json` |
+| `python -m twoclock.experiments.r37_hazard_fe` | Relative-hazard fit with unit-year x load x quarter fixed effects; tau 12 h vs 1.5 h by state: hazard x8.3 at W=1, tau=1.5 h preferred in 33/48 states | `r37_hazard_fe.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |

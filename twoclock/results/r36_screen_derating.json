@@ -1,0 +1,290 @@
+[
+ {
+  "regime": "normal",
+  "sample": 0,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 0.2916621983448664,
+  "saving_pct": 3.4265920816483164,
+  "variant": "cal_tau12_derate1.0",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "peak",
+  "sample": 0,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.375,
+  "share_down_better": 0.375,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 13.958099709581685,
+  "variant": "cal_tau12_derate1.0",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "tight1.15",
+  "sample": 0,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.0,
+  "share_down_better": 0.0,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 14.50550055552119,
+  "variant": "cal_tau12_derate1.0",
+  "flag": false,
+  "fail": false
+ },
+ {
+  "regime": "normal",
+  "sample": 1,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.05,
+   "derate_quad": 0.6
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 0.44089265590068205,
+  "saving_pct": 0.04874565026813382,
+  "variant": "cal_tau12_derate0.5",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "peak",
+  "sample": 1,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.05,
+   "derate_quad": 0.6
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.3333333333333333,
+  "share_down_better": 0.3333333333333333,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 16.70803569085928,
+  "variant": "cal_tau12_derate0.5",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "tight1.15",
+  "sample": 1,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.05,
+   "derate_quad": 0.6
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.125,
+  "share_down_better": 0.125,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 18.663399558157888,
+  "variant": "cal_tau12_derate0.5",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "normal",
+  "sample": 2,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.025,
+   "derate_quad": 0.3
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 0.5511914488621095,
+  "saving_pct": -0.549832417516738,
+  "variant": "cal_tau12_derate0.25",
+  "flag": true,
+  "fail": true
+ },
+ {
+  "regime": "peak",
+  "sample": 2,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.025,
+   "derate_quad": 0.3
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.4166666666666667,
+  "share_down_better": 0.4166666666666667,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 17.532711851111582,
+  "variant": "cal_tau12_derate0.25",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "tight1.15",
+  "sample": 2,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.025,
+   "derate_quad": 0.3
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.0,
+  "share_down_better": 0.0,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 22.765151263421192,
+  "variant": "cal_tau12_derate0.25",
+  "flag": false,
+  "fail": false
+ },
+ {
+  "regime": "normal",
+  "sample": 3,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.0,
+   "derate_quad": 0.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 9.314414748184285,
+  "saving_pct": -9.314459460767143,
+  "variant": "cal_tau12_derate0",
+  "flag": true,
+  "fail": true
+ },
+ {
+  "regime": "peak",
+  "sample": 3,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.0,
+   "derate_quad": 0.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 10.470749290866067,
+  "saving_pct": -10.470786714653002,
+  "variant": "cal_tau12_derate0",
+  "flag": true,
+  "fail": true
+ },
+ {
+  "regime": "tight1.15",
+  "sample": 3,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 12.0,
+   "derate_lin": 0.0,
+   "derate_quad": 0.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 1.0,
+  "share_down_better": 1.0,
+  "share_up_better": 0.0,
+  "gap_pct": 11.709148346747345,
+  "saving_pct": -11.709184570575282,
+  "variant": "cal_tau12_derate0",
+  "flag": true,
+  "fail": true
+ },
+ {
+  "regime": "normal",
+  "sample": 4,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 3.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.9583333333333334,
+  "share_down_better": 0.9583333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 0.42308495505647414,
+  "saving_pct": 7.095420690069332,
+  "variant": "cal_tau3_derate1.0",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "peak",
+  "sample": 4,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 3.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.7083333333333334,
+  "share_down_better": 0.7083333333333334,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 15.282180930222733,
+  "variant": "cal_tau3_derate1.0",
+  "flag": true,
+  "fail": false
+ },
+ {
+  "regime": "tight1.15",
+  "sample": 4,
+  "params": {
+   "heat_lin": 0.0,
+   "heat_quad": 0.0,
+   "tau_thermal": 3.0
+  },
+  "n_steps": 24,
+  "share_A_violated": 0.625,
+  "share_down_better": 0.625,
+  "share_up_better": 0.0,
+  "gap_pct": 0.0,
+  "saving_pct": 16.187435581630982,
+  "variant": "cal_tau3_derate1.0",
+  "flag": true,
+  "fail": false
+ }
+]
