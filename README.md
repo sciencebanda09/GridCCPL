@@ -136,6 +136,11 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r25_hazard_calibration [cems.parquet]` | Outage-hazard / time-constant calibration from EPA CEMS 2024 (needs the cached R12 data) | `r25_hazard_calibration.json` |
 | `python -m twoclock.experiments.r26_convexity` | Convexity of the cost-to-go in wear, with and without heat-rate drift | `r26_convexity.json` |
 | `python -m twoclock.experiments.r27_verify_band` | Trajectory-level check that the certified band is flat (7 regimes, 13,440 steps) | `r27_verify_band.json` |
+| `python -m twoclock.experiments.r28_hazard_all_us [dir]` | Hazard calibration on all US EPA CEMS 2015-2024 (needs the CEMS parquet files, see script header) | `r28_hazard_all_us.json` |
+| `python -m twoclock.experiments.r29_heatrate_calibration [dir]` | Heat-rate vs model wear state on CEMS 2022-2024 | `r29_heatrate_calibration.json` |
+| `python -m twoclock.experiments.r30_outages_calibrated` | Outage tiers at the calibrated hazard coefficient | `r30_outages_calibrated.json` |
+| `python -m twoclock.experiments.r31_calibrated_savings` | Certificate savings with calibrated heat rate / tau and varied derating | `r31_calibrated_savings.json` |
+| `python -m twoclock.experiments.r32_A_screen` | Does the (A) deviation screen predict failing random-parameter draws? | `r32_A_screen.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
@@ -175,8 +180,10 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 * On NYISO data, an independent no-wear smooth-supply generator makes the one-sided 'excludes zero' test fire on 100% of
   windows (`r22_independent_dgp.json`), so that test is uninformative.
 * The proof of the price-band proposition, with its completeness condition (C), is in `twoclock/PROOF.md`.
-* Hazard calibration (EPA CEMS, 46 NY units, 48 trip-like shutdowns): no detectable link between model wear and trips;
-  90% upper bound kappa <= 0.004/day, far below the synthetic kappa in the outage experiments (a stress scenario, not an estimate).
+* Calibration (EPA CEMS 2015-2024, 101,848 trip-like shutdowns): the model's wear path predicts trips, kappa_hat = 0.0086/day
+  (95% CI 0.0082-0.0091), best tau about 12 h; heat rate does not degrade with wear (-0.6 to -1.2% at W=1, model assumed +90%).
+  Synthetic kappa in the outage experiments is 29-700x larger; at the calibrated kappa Tier 0 (the certificate) is optimal.
+  Capacity derating, which the savings depend on, is not identifiable from public data (`r31_calibrated_savings.json`).
 * The closed-form band of the proposition can miss breakpoints for substitutable units (15% of 391 random fleets);
   the verified flat interval (two LP solves per step, `PROOF.md`, `r24_completeness`) is exact. Cost-to-go convexity held on 95-100% of
   tested lines, with or without heat-rate drift (`r26_convexity`).
