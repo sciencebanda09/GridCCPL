@@ -135,6 +135,7 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r24_completeness` | Verifiable flat interval (completeness condition C) on random fleets + substitutable-unit counterexample | `r24_completeness.json` |
 | `python -m twoclock.experiments.r25_hazard_calibration [cems.parquet]` | Outage-hazard / time-constant calibration from EPA CEMS 2024 (needs the cached R12 data) | `r25_hazard_calibration.json` |
 | `python -m twoclock.experiments.r26_convexity` | Convexity of the cost-to-go in wear, with and without heat-rate drift | `r26_convexity.json` |
+| `python -m twoclock.experiments.r27_verify_band` | Trajectory-level check that the certified band is flat (7 regimes, 13,440 steps) | `r27_verify_band.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |

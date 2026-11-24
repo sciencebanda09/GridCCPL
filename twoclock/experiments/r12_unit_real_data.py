@@ -1133,7 +1133,7 @@ def run_parallel_windows(units: list[dict], cfg: dict, workers: int = 6) -> list
 
 
 # ---------------------------------------------------------------------------
-# Publication Figure (3 crisp panels, matched to the R5 figure style)
+# Publication Figure (3 crisp panels, matched to R5 paper aesthetic)
 # ---------------------------------------------------------------------------
 
 def make_figure(payload: dict) -> None:
