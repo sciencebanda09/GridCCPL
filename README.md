@@ -141,6 +141,8 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r30_outages_calibrated` | Outage tiers at the calibrated hazard coefficient | `r30_outages_calibrated.json` |
 | `python -m twoclock.experiments.r31_calibrated_savings` | Certificate savings with calibrated heat rate / tau and varied derating | `r31_calibrated_savings.json` |
 | `python -m twoclock.experiments.r32_A_screen` | Does the (A) deviation screen predict failing random-parameter draws? | `r32_A_screen.json` |
+| `python -m twoclock.experiments.r33_hazard_cluster` | State-clustered bootstrap/jackknife CI for the all-US hazard fit: (hatkappa=0.0086)/day, 95% CI 0.0073–0.0097 (48 states, 400/400 draws positive) | `r33_hazard_cluster.json` |
+| `python -m twoclock.experiments.plot_calibration` | Calibration figure (trip rate vs wear state; heat-rate effect) | `fig_calibration.pdf` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
