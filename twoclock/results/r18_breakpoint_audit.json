@@ -1,0 +1,587 @@
+{
+ "experiment": "r18_breakpoint_audit",
+ "aggregate": {
+  "n_states": 50,
+  "n_with_breakpoint_in_band": 0,
+  "n_indispensable_states": 20,
+  "n_shed_onset_checked": 30,
+  "n_shed_onset_mismatch": 0,
+  "n_joint_threshold": 0,
+  "n_states_no_shedding_any_mu": 30,
+  "max_rel_ceiling_err": 0.0
+ },
+ "states": [
+  {
+   "regime": "normal1",
+   "step": 42,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 1,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 225,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 74,
+   "L": 6347.022407616604,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 269,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 236,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 1,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 218,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 58,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 1,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 147,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 236,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 2,
+   "L": 0.0,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 0,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 20,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 286,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 272,
+   "L": 5444.8803744818115,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 5,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 148,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 67,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "normal1",
+   "step": 120,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 276,
+   "L": 4840.145955884815,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 5,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 89,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 111,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 37,
+   "L": 962.5668449197856,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 261,
+   "L": 3223.925016192816,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 4,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 263,
+   "L": 1836.2344620936094,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 174,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 69,
+   "L": 6076.1583097492685,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 30,
+   "L": 4118.7456758556855,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 5,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "peak1",
+   "step": 38,
+   "L": 4897.311693894993,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 5,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 70,
+   "L": 933.7944664031621,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 43,
+   "L": 2049.037082408402,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 171,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 87,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 75,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 190,
+   "L": 1694.107503979351,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 224,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 75,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 167,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 70,
+   "L": 933.7944664031621,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 72,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.25",
+   "step": 78,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 212,
+   "L": 4697.2585737317895,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 5,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 173,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 159,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 116,
+   "L": 1484.8585286895998,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 4,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 137,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 104,
+   "L": 1867.2955205181506,
+   "U": null,
+   "indispensable": [],
+   "shed_onset": null,
+   "n_breakpoints": 4,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 173,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 274,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 79,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 178,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 224,
+   "L": 1941.4483821263489,
+   "U": 84886.36363636363,
+   "indispensable": [
+    0,
+    1,
+    2
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 3,
+   "breakpoints_in_band": []
+  },
+  {
+   "regime": "tight1.35",
+   "step": 36,
+   "L": 1941.4483821263489,
+   "U": 238475.93582887706,
+   "indispensable": [
+    0,
+    1
+   ],
+   "shed_onset": 0.0,
+   "n_breakpoints": 2,
+   "breakpoints_in_band": []
+  }
+ ]
+}

@@ -126,6 +126,8 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r15_misspec` | Certificate computed under a misspecified aging model, deployed in the true one | `r15_misspec.json` |
 | `python -m twoclock.experiments.r16_mpc_oracle` | Receding-horizon perfect-foresight price oracle vs. the certificate | `r16_mpc_oracle.json` |
 | `python -m twoclock.experiments.r17_long_memory` | Long-memory wear (thermal time constant 12-48 h) | `r17_long_memory.json` |
+| `python -m twoclock.experiments.r18_breakpoint_audit` | Complete breakpoint sweep: no dispatch change inside the claimed band; no substitutable-unit shedding threshold on the 5-bus fleet | `r18_breakpoint_audit.json` |
+| `python -m twoclock.experiments.r19_mpc_longmemory` | MPC price oracle at thermal time constant 24/48 h (peak, tight 1.15) | `r19_mpc_longmemory.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
@@ -156,4 +158,6 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
   of 24-48 h the best constant price lies above the certificate band (`r17_long_memory.json`).
 * It needs fewer simulator steps than a sweep or bisection, but a bisection is faster in
   wall-clock (`r13_baselines.json`, `r14_lazy_check.json`).
+* At long memory the perfect-foresight oracle beats the certificate by 1.2-7.2% but the best constant
+  price by only <=0.3%: the loss is a price level above the band, not state dependence (`r19_mpc_longmemory.json`).
 * Wear parameters are reduced-form and uncalibrated; dollar savings are illustrative.
