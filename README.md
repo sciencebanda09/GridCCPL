@@ -128,6 +128,10 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r17_long_memory` | Long-memory wear (thermal time constant 12-48 h) | `r17_long_memory.json` |
 | `python -m twoclock.experiments.r18_breakpoint_audit` | Complete breakpoint sweep: no dispatch change inside the claimed band; no substitutable-unit shedding threshold on the 5-bus fleet | `r18_breakpoint_audit.json` |
 | `python -m twoclock.experiments.r19_mpc_longmemory` | MPC price oracle at thermal time constant 24/48 h (peak, tight 1.15) | `r19_mpc_longmemory.json` |
+| `python -m twoclock.experiments.r20_pid_lagrangian` | PID-Lagrangian vs dual ascent (target mis-set vs oracle-tuned) | `r20_pid_lagrangian.json` |
+| `python -m twoclock.experiments.r21_assumption_A` | One-step-deviation test of the dynamic assumption (A), tau = 3 h vs 48 h | `r21_assumption_A.json` |
+| `python -m twoclock.experiments.r22_independent_dgp [DATA_DIR]` | Independent-generator controls for the NYISO audit (no inverse crime) | `r22_independent_dgp.json` |
+| `python -m twoclock.experiments.r23_param_prior` | Random wear parameters: certificate vs best constant | `r23_param_prior.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
@@ -160,4 +164,11 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
   wall-clock (`r13_baselines.json`, `r14_lazy_check.json`).
 * At long memory the perfect-foresight oracle beats the certificate by 1.2-7.2% but the best constant
   price by only <=0.3%: the loss is a price level above the band, not state dependence (`r19_mpc_longmemory.json`).
+* The certificate's price in $/MWh depends on the fuel merit order, not on how damaging wear is. With random wear
+  parameters it matched the best constant in 11/24 draws; it fails when (A) fails, upward (best price above the band)
+  or downward (damage too small, certificate costs more than blind). Screen with `r21_assumption_A`.
+* A PID-Lagrangian does not fix a mis-set constraint target (`r20_pid_lagrangian.json`).
+* On NYISO data, an independent no-wear smooth-supply generator makes the one-sided 'excludes zero' test fire on 100% of
+  windows (`r22_independent_dgp.json`), so that test is uninformative.
+* The proof of the price-band proposition, with its completeness condition (C), is in `twoclock/PROOF.md`.
 * Wear parameters are reduced-form and uncalibrated; dollar savings are illustrative.

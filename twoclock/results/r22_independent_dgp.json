@@ -1,0 +1,6030 @@
+{
+ "summary": {
+  "D0_null": {
+   "n": 250,
+   "excl0": 1.0,
+   "two_sided": 0.132,
+   "winner_kink": 0.012,
+   "winner_quad": 0.728,
+   "winner_cap": 0.26
+  },
+  "D1_sigma0.80": {
+   "n": 250,
+   "excl0": 1.0,
+   "two_sided": 0.0,
+   "winner_kink": 0.008,
+   "winner_quad": 0.644,
+   "winner_cap": 0.348
+  },
+  "D1_sigma0.90": {
+   "n": 250,
+   "excl0": 1.0,
+   "two_sided": 0.064,
+   "winner_kink": 0.008,
+   "winner_quad": 0.696,
+   "winner_cap": 0.296
+  }
+ },
+ "records": [
+  {
+   "unit": "2490:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 52.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 52.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 52.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 73.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 73.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 73.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2490:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 66.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 66.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 66.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 85.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 142.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 85.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:30",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:30",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 71.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 73.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 73.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2490:30",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 93.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 130.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 41.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 188.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 63.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 62.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 97.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 68.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 54.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:1",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 76.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 55.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2493:2",
+   "tech": "GT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 188.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 112.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 51.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 76.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 53.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2500:UCC001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 61.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 124.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 61.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 50.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 70.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 70.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 50.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 136.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 50.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 53.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 300.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 53.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:10",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 87.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 98.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 95.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2511:20",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 138.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 80.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 186.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 126.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 104.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:1",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 96.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 96.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 96.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:2",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 90.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 51.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 69.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 62.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 52.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 89.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 89.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2516:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 285.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 285.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 285.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 110.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 88.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 168.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 205.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 168.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 192.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 104.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 57.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 265.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 98.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 275.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2517:4",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 280.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 102.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 192.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 39.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 71.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 57.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 120.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 53.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 72.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 57.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 53.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "2539:10003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 182.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 53.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 50.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 124.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST3",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 124.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "8906:AST5",
+   "tech": "ST",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 76.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 108.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 83.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 56.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 65.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 56.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 97.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 106.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 43.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55375:CT2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 93.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 50.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 88.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 48.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 130.0,
+     "winner": "kink"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 37.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 114.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 12.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 75.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 18.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 26.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 30.0,
+     "winner": "kink"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 44.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 28.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 114.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 34.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 36.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 88.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 72.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 38.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 41.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 48.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 48.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:2",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 172.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 66.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 130.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 59.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "55405:3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 120.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 58.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 99.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 58.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56196:CTG7A",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 38.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 90.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 35.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 28.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 46.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 148.0,
+     "winner": "kink"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 30.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 23.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 32.0,
+     "winner": "kink"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 36.0,
+     "winner": "kink"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 67.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 67.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 67.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "56234:1",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 26.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 22.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U001",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 205.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 64.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 29.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 47.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 30.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 31.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 49.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U002",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 37.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 18.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 42.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 27.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 46.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 32.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 20.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57185:U003",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 21.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 19.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 33.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 51.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 51.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 51.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 24.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 63.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 192.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 63.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 44.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 44.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 44.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 40.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "cap"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT3",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 16.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 39.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 25.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 42.0,
+     "winner": "kink"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 120.0,
+     "winner": "cap"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 47.0,
+     "winner": "kink"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 34.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 58.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 79.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 60.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": true,
+     "w_hat": 23.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 51.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 28.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 17.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 23.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 45.0,
+     "winner": "quad"
+    }
+   }
+  },
+  {
+   "unit": "57664:CT4",
+   "tech": "CCGT",
+   "dgp": {
+    "D0_null": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.80": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 62.0,
+     "winner": "quad"
+    },
+    "D1_sigma0.90": {
+     "excl0": true,
+     "two_sided": false,
+     "w_hat": 43.0,
+     "winner": "quad"
+    }
+   }
+  }
+ ]
+}
