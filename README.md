@@ -132,6 +132,9 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r21_assumption_A` | One-step-deviation test of the dynamic assumption (A), tau = 3 h vs 48 h | `r21_assumption_A.json` |
 | `python -m twoclock.experiments.r22_independent_dgp [DATA_DIR]` | Independent-generator controls for the NYISO audit (no inverse crime) | `r22_independent_dgp.json` |
 | `python -m twoclock.experiments.r23_param_prior` | Random wear parameters: certificate vs best constant | `r23_param_prior.json` |
+| `python -m twoclock.experiments.r24_completeness` | Verifiable flat interval (completeness condition C) on random fleets + substitutable-unit counterexample | `r24_completeness.json` |
+| `python -m twoclock.experiments.r25_hazard_calibration [cems.parquet]` | Outage-hazard / time-constant calibration from EPA CEMS 2024 (needs the cached R12 data) | `r25_hazard_calibration.json` |
+| `python -m twoclock.experiments.r26_convexity` | Convexity of the cost-to-go in wear, with and without heat-rate drift | `r26_convexity.json` |
 | `python -m twoclock.experiments.r1_learner_eval` | Pathwise vs. ridge value-gradient learners | `r1_learner.json` |
 | `python -m twoclock.experiments.r2_ppo_eval` | Tuned PPO baselines | `r2_ppo.json` |
 | `python -m twoclock.experiments.r3_interior` | State-dependent price rules vs. best constant | `r3_interior.json` |
@@ -171,4 +174,9 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 * On NYISO data, an independent no-wear smooth-supply generator makes the one-sided 'excludes zero' test fire on 100% of
   windows (`r22_independent_dgp.json`), so that test is uninformative.
 * The proof of the price-band proposition, with its completeness condition (C), is in `twoclock/PROOF.md`.
+* Hazard calibration (EPA CEMS, 46 NY units, 48 trip-like shutdowns): no detectable link between model wear and trips;
+  90% upper bound kappa <= 0.004/day, far below the synthetic kappa in the outage experiments (a stress scenario, not an estimate).
+* The closed-form band of the proposition can miss breakpoints for substitutable units (15% of 391 random fleets);
+  the verified flat interval (two LP solves per step, `PROOF.md`, `r24_completeness`) is exact. Cost-to-go convexity held on 95-100% of
+  tested lines, with or without heat-rate drift (`r26_convexity`).
 * Wear parameters are reduced-form and uncalibrated; dollar savings are illustrative.

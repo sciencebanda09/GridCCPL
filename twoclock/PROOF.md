@@ -87,3 +87,38 @@ is not guaranteed because the *true* cost includes heat-rate drift (bilinear in 
 the dispatch LP does not model; (2) (A′) is a statement about the unknown V, so we test it
 (`experiments/r21_assumption_A.py`, one-step deviations from the certificate price) rather than assume it.
 (A′) fails at long memory (τ = 48 h, `r17`), where the best constant lies above μ_hi.
+
+## (C) for general fleets: a verifiable flat interval (unconditional)
+
+**Theorem 2.** Let φ_t(μ) = min_{x∈Ω_t} f(x) + μ a(x). Then φ_t is concave (a pointwise minimum of affine
+functions of μ). If a dispatch x̂ ∈ Ω_t is optimal at μ₁ < μ₂, it is optimal at every μ ∈ [μ₁, μ₂].
+
+*Proof.* ℓ(μ) = f(x̂) + μ a(x̂) is affine and ℓ ≥ φ_t everywhere (x̂ is feasible), with ℓ(μ₁) = φ_t(μ₁),
+ℓ(μ₂) = φ_t(μ₂). Concavity gives φ_t(μ) ≥ the chord of φ_t between μ₁ and μ₂, which equals ℓ(μ). So
+φ_t = ℓ on [μ₁, μ₂], i.e. x̂ is optimal there. ∎
+
+**Corollary (no assumption on the fleet).** Let ξ be the certificate trajectory with dispatches x_t at price μ_c,
+and I_t = {μ : x_t optimal for LP_t(μ)}. By Theorem 2 each I_t is an interval containing μ_c; its endpoints
+are found by bisection, each probe being one LP solve and a cost comparison φ_t(μ) = f(x_t) + μ a(x_t)
+(two probes per step suffice to *verify* a candidate interval). Put I = ∩_t I_t. A policy that plays x_t at
+every step is an optimal response to every μ ∈ I, so every μ ∈ I yields the trajectory ξ and the same J
+(exactly, if the optimal dispatch is unique, which holds generically; otherwise for the tie-break that selects x_t).
+Condition (C) of the theorem above is then equivalent to (L(ξ), U(ξ)) ⊆ I, and **this is checkable
+without any single-unit formula**. If the check fails, I is the correct (smaller) band.
+
+**Why the closed forms alone are not enough.** Two units that can each cover a shortfall are not
+"indispensable", so U = ∞ and L ignores their merit-order switch. Example (`r24_completeness.py`): c = (20, 30),
+α = (0.01, 0.02), 20 MW above the free blocks. The closed form gives (L, U) = (0, ∞), but the dispatch changes at
+μ = (30−20)/0.01 = 1000 (verified interval at μ = 10³: [10⁻³, 1000.009]) and at the shedding switch. On 391
+random fleets (2–8 units, random costs, aging rates, ramp windows and loads) the closed-form band was
+not flat in 15.3% of cases, while the verified interval was unsound in 0 cases.
+
+## Convexity of the cost-to-go
+
+(A′) needs V_{t+1} convex in the wear direction. `experiments/r26_convexity.py` evaluates the best-of-grid
+cost-to-go (5 prices, 2-day horizon, true simulator) on lines W₀ + θd, θ ∈ {0, .08, .16, .24, .32}, at every
+96th step of certificate trajectories (3 seeds, `peak`, `tight 1.15`; 168 lines per variant). With the default
+heat-rate drift, 40/42 (`peak`) and 42/42 (`tight 1.15`) lines are convex (worst second difference −307 $,
+0.017% of V). With the heat-rate channel switched off, 38/42 and 42/42 (worst −783 $, 0.043%). So heat-rate drift
+did not create the non-convexity in this test; the few violations are small and coincide with price switches of
+the best-of-grid minimum. This is evidence, not a proof of convexity of V*.
