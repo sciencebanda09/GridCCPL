@@ -122,7 +122,7 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 | `python -m twoclock.experiments.r10_verify` | Numerical verification of the price-band proposition | `r10_verify.json` |
 | `python -m twoclock.experiments.r6_certificate` | Dual certificate vs. constant-price sweep, 7 regimes + 14/30-bus | `r6_certificate.json` |
 | `python -m twoclock.experiments.r13_baselines` | Bisection, hard-cap and cap-unless-shedding baselines; 20 seeds; simulator steps / LP solves / wall-clock | `r13_baselines.json` |
-| `python -m twoclock.experiments.r14_lazy_check` | Lazy vs. full certificate probe: exactness and speed | `r14_lazy_check.json` |
+| `python -m twoclock.experiments.r14_lazy_check` | Lazy vs. full certificate probe: exactness, speed, and verification-rollout timing | `r14_lazy_check.json` |
 | `python -m twoclock.experiments.r15_misspec` | Certificate computed under a misspecified aging model, deployed in the true one | `r15_misspec.json` |
 | `python -m twoclock.experiments.r16_mpc_oracle` | Receding-horizon perfect-foresight price oracle vs. the certificate | `r16_mpc_oracle.json` |
 | `python -m twoclock.experiments.r17_long_memory` | Long-memory wear (thermal time constant 12-48 h) | `r17_long_memory.json` |
@@ -180,16 +180,21 @@ Scripts that use several worker processes need roughly 1 GB RAM each.
 * At long memory the perfect-foresight oracle beats the certificate by 1.2-7.2% but the best constant
   price by only <=0.3%: the loss is a price level above the band, not state dependence (`r19_mpc_longmemory.json`).
 * The certificate's price in $/MWh depends on the fuel merit order, not on how damaging wear is. With random wear
-  parameters it matched the best constant in 11/24 draws; it fails when (A) fails, upward (best price above the band)
-  or downward (damage too small, certificate costs more than blind). Screen with `r21_assumption_A`.
+  parameters (two independent sets, 48 draws) it matched the best constant in 21/48; it fails when (A) fails, upward
+  (best price above the band) or downward (damage too small, certificate costs more than blind). The (A) deviation
+  screen flags 9/12 failures and 0/12 sound draws in the first set, and 12/14 failures and 3/10 sound draws on the
+  held-out set (`r21_assumption_A.json`, `r32_A_screen.json`, `r34_heldout_screen.json`).
 * A PID-Lagrangian does not fix a mis-set constraint target (`r20_pid_lagrangian.json`).
 * On NYISO data, an independent no-wear smooth-supply generator makes the one-sided 'excludes zero' test fire on 100% of
   windows (`r22_independent_dgp.json`), so that test is uninformative.
 * The proof of the price-band proposition, with its completeness condition (C), is in `twoclock/PROOF.md`.
-* Calibration (EPA CEMS 2015-2024, 101,848 trip-like shutdowns): the model's wear path predicts trips, kappa_hat = 0.0086/day
-  (95% CI 0.0082-0.0091), best tau about 12 h; heat rate does not degrade with wear (-0.6 to -1.2% at W=1, model assumed +90%).
-  Synthetic kappa in the outage experiments is 29-700x larger; at the calibrated kappa Tier 0 (the certificate) is optimal.
-  Capacity derating, which the savings depend on, is not identifiable from public data (`r31_calibrated_savings.json`).
+* Calibration (EPA CEMS 2015-2024, 101,848 trip-like shutdowns): the model's wear path predicts trips. The additive
+  fit gives kappa_hat = 0.0086/day (state bootstrap 95% CI 0.0073-0.0097) and a best tau near 12 h; a relative-hazard
+  fit with unit-year x load x quarter fixed effects gives about kappa = 0.05/day and prefers tau = 1.5 h, so neither is
+  pinned down. Heat rate does not degrade with wear (-0.6 to -1.2% at W=1, model assumed +90%). Synthetic kappa in the
+  outage experiments is 5-700x larger; at the calibrated kappa Tier 0 is mean-optimal and CVaR-optimal only at the low
+  end, so the tier recommendation depends on a hazard we can only bracket. Capacity derating, which the savings depend
+  on, is not identifiable from public data (`r31_calibrated_savings.json`, `r35_expected_trips.json`, `r37_hazard_fe.json`).
 * The closed-form band of the proposition can miss breakpoints for substitutable units (15% of 391 random fleets);
   the verified flat interval (two LP solves per step, `PROOF.md`, `r24_completeness`) is exact. Cost-to-go convexity held on 95-100% of
   tested lines, with or without heat-rate drift (`r26_convexity`).

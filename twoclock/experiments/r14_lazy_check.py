@@ -2,7 +2,10 @@
 
 Compares certificate outputs (mu_lo, mu_hi, per-unit bands, forced-step counts) and
 wall-clock/LP-solve counts of the full probe (5 LPs/step) vs the lazy probe that
-skips LPs which cannot change the result.   Run: python -m twoclock.experiments.r14_lazy_check
+skips LPs which cannot change the result.  Also times the trajectory-level
+verification rollout (one 960-step seed, priced LP at mu_c and at both band
+endpoints) and reports the combined selection+verification cost used in Table 2.
+Run: python -m twoclock.experiments.r14_lazy_check
 """
 from __future__ import annotations
 import json, os, time
@@ -50,6 +53,38 @@ def one(args):
     out["identical"] = bool(a["mu_lo"] == b["mu_lo"] and a["mu_hi"] == b["mu_hi"]
                             and a["per_unit_lo"] == b["per_unit_lo"]
                             and a["forced"] == b["forced"])
+
+    # --- verification rollout (one seed; 3 LPs/step: mu_c + both endpoints) ---
+    from twoclock.agents import OPFAware
+    from twoclock.envs import make_env
+    from twoclock.experiments.r10_verify import make_solver
+    lo, hi = b["mu_lo"], b["mu_hi"]
+    mu_c = float(np.sqrt(lo * hi)) if np.isfinite(hi) else 2.0 * lo
+    ends = (lo * 1.02, (hi * 0.98) if hi and np.isfinite(hi) else 1e6)
+    n0, t0 = cnt["n"], time.time()
+    env = make_env(diff, days=10, seed=1, demand_scale=ds, aging=aging)
+    env.net = net
+    ag = OPFAware(net, aging, float(mu_c))
+    o = env.reset(); ag.reset(env)
+    vsteps = 0
+    while not env.done:
+        solve, _ = make_solver(net, aging, o.ctx)
+        rc = solve(mu_c)
+        if rc["status"] == "ok":
+            for m in ends:
+                solve(m)
+        o, _, _, _ = env.step(ag.act(o))
+        vsteps += 1
+    ver = {"wall_s": time.time() - t0, "lp_solves": cnt["n"] - n0,
+           "env_steps": vsteps, "mu_c": mu_c}
+    out["verification"] = ver
+    out["combined"] = {}
+    for mode, sel in (("lazy", b), ("full", a)):
+        out["combined"][mode] = {
+            "wall_s": sel["wall_s"] + ver["wall_s"],
+            "lp_solves": sel["lp_solves"] + ver["lp_solves"],
+            "env_steps": sel["env_steps"] + ver["env_steps"],
+        }
     return out
 
 
@@ -62,7 +97,10 @@ def main():
     for r in rows:
         print(r["regime"], "identical" if r["identical"] else "DIFFERENT",
               "full %.0fs/%d LP" % (r["full"]["wall_s"], r["full"]["lp_solves"]),
-              "lazy %.0fs/%d LP" % (r["lazy"]["wall_s"], r["lazy"]["lp_solves"]))
+              "lazy %.0fs/%d LP" % (r["lazy"]["wall_s"], r["lazy"]["lp_solves"]),
+              "verify %.0fs/%d LP" % (r["verification"]["wall_s"], r["verification"]["lp_solves"]),
+              "combined lazy %.0fs/%d LP" % (r["combined"]["lazy"]["wall_s"],
+                                             r["combined"]["lazy"]["lp_solves"]))
 
 
 if __name__ == "__main__":
